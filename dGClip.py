@@ -38,7 +38,6 @@ class dGClip(torch.optim.Optimizer):
                 loss = closure()
 
         for param_group in self.param_groups:
-            param_group = self.param_groups[0]
             parameter_list = param_group["params"]
             concatenated_weights = torch.cat(
                 [param.grad.view(-1) for param in parameter_list]
